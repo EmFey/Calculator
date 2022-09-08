@@ -11,3 +11,19 @@ body {
 .footer {
     flex-shrink: 0;
 }
+
+.calcBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+}
+
+.calcScreen {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    word-wrap: break-word;
+    word-break: break-all;
+}
