@@ -19,13 +19,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: black;
     padding: 20px;
     width: 50%;
+    border-radius: 10px;
 }
 
 .calcScreen {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 400px;
     height: 100px;
     text-align: right;
@@ -34,4 +39,16 @@ body {
     word-break: break-all;
     padding: 10px;
     margin: 20px;
+    border-radius: 10px;
+}
+
+.calcInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.editButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
