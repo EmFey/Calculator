@@ -14,7 +14,21 @@ function divide(a, b) {
     return console.log(a / b);
 }
 
-sum(5, 2);
-subtract(5, 2);
-multiply(5, 2);
-divide(4, 2);
+function operator(num1, op, num2) {
+    if (op === "+") {
+        return console.log(sum(num1, num2));
+    } else if (op === "-") {
+        return console.log(subtract(num1, num2));
+    } else if (op === "*") {
+        return console.log(multiply(num1, num2));
+    } else if (op === "/") {
+        return console.log(divide(num1, num2));
+    } else {
+        console.log("Incorrect inputs!");
+    }
+}
+
+operator(5, "+", 2);
+operator(5, "-", 2);
+operator(5, "*", 2);
+operator(4, "/", 2);
