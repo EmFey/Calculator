@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     background-color: black;
     padding: 20px;
-    width: 50%;
+    width: 40%;
     border-radius: 10px;
 }
 
@@ -51,4 +51,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+}
+
+.mainButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
 }
