@@ -28,10 +28,6 @@ body {
 }
 
 .calcScreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 400px;
     height: 100px;
     text-align: right;
