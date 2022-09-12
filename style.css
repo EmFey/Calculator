@@ -22,8 +22,8 @@ body {
     flex-direction: column;
     background-color: black;
     padding: 20px;
-    width: 30%;
-    border-radius: 10px;
+    width: 60vh;
+    border-radius: 20px;
     border: 3px solid orangered;
 }
 
@@ -40,7 +40,7 @@ body {
     word-break: break-all;
     padding: 10px;
     margin: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 3px solid orangered;
 }
 
@@ -58,14 +58,25 @@ body {
 }
 
 .edt {
-    border-radius: 10px;
+    border-radius: 20px;
     border: 3px solid orangered;
     padding: 10px;
+    font-size: x-large;
+}
+
+.edt:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.edt:active {
+    background-color: #fcaa8c;
 }
 
 .extra {
     background-color: orangered;
     color: white;
+    font-size: x-large;
 }
 
 .mainButtons {
@@ -75,7 +86,17 @@ body {
 }
 
 .btn {
-    border-radius: 10px;
+    border-radius: 20px;
     border: 3px solid orangered;
     padding: 10px;
+    font-size: x-large;
+}
+
+.btn:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #fcaa8c;
 }

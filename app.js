@@ -1,3 +1,12 @@
+const numbers = document.querySelectorAll("[num]");
+const fullOperation = document.querySelector(".fullOperation");
+
+numbers.forEach((button) => button.addEventListener("click", displayValue));
+
+function displayValue() {
+    fullOperation.textContent = numbers.textContent;
+}
+
 function sum(a, b) {
     return console.log(a + b);
 }
@@ -11,7 +20,8 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return console.log(a / b);
+    if (b === 0) return null
+      else return console.log(a / b);
 }
 
 function operator(num1, op, num2) {
