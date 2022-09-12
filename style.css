@@ -22,8 +22,9 @@ body {
     flex-direction: column;
     background-color: black;
     padding: 20px;
-    width: 40%;
+    width: 30%;
     border-radius: 10px;
+    border: 3px solid orangered;
 }
 
 .calcScreen {
@@ -40,22 +41,41 @@ body {
     padding: 10px;
     margin: 20px;
     border-radius: 10px;
+    border: 3px solid orangered;
 }
 
 .calcInputs {
     display: flex;
     flex-direction: column;
+    width: 400px;
 }
 
 .editButtons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    margin: 10px;
+}
+
+.edt {
+    border-radius: 10px;
+    border: 3px solid orangered;
+    padding: 10px;
+}
+
+.extra {
+    background-color: orangered;
+    color: white;
 }
 
 .mainButtons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+}
+
+.btn {
+    border-radius: 10px;
+    border: 3px solid orangered;
+    padding: 10px;
 }
