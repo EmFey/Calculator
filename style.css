@@ -44,12 +44,12 @@ body {
 }
 
 .fullOperation {
-    height: 40%;
+    height: 60%;
+    font-size: 40px;
 }
 
 .currentOperation {
-    height: 60%;
-    font-size: 40px;
+    height: 40%;
 }
 
 .calcInputs {
