@@ -1,7 +1,9 @@
+//getting the elements from HTML
 const numbers = document.querySelectorAll(".num");
 let fullOperation = document.querySelector(".fullOperation").textContent = "Clowning";
 let currrentOperation = document.querySelector(".currentOperation"); 
 
+//setting event listeners
 for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener("click", () => displayNumber(numbers.textContent));
 }
@@ -9,8 +11,8 @@ for (let i = 0; i < numbers.length; i++) {
 //numbers.forEach((button) => button.addEventListener("click", () => displayNumber(button.textContent)));
 
 function displayNumber(number) {
+    currrentOperation.textContent = " ";
     currrentOperation.textContent += number;
-    console.log(number);
 }
 
 function sum(a, b) {

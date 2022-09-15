@@ -49,6 +49,7 @@ body {
 
 .currentOperation {
     height: 60%;
+    font-size: 40px;
 }
 
 .calcInputs {
