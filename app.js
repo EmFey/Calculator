@@ -1,10 +1,16 @@
-const numbers = document.querySelectorAll("[num]");
-const fullOperation = document.querySelector(".fullOperation").textContent = "Clowning";
+const numbers = document.querySelectorAll(".num");
+let fullOperation = document.querySelector(".fullOperation").textContent = "Clowning";
+let currrentOperation = document.querySelector(".currentOperation"); 
 
-numbers.forEach((button) => button.addEventListener("click", () => displayNumber(button.textContent)));
+for (let i = 0; i < numbers.length; i++) {
+    numbers[i].addEventListener("click", () => displayNumber(numbers.textContent));
+}
+
+//numbers.forEach((button) => button.addEventListener("click", () => displayNumber(button.textContent)));
 
 function displayNumber(number) {
-    fullOperation.textContent += number;
+    currrentOperation.textContent += number;
+    console.log(number);
 }
 
 function sum(a, b) {

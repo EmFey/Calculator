@@ -43,6 +43,14 @@ body {
     border: 3px solid orangered;
 }
 
+.fullOperation {
+    height: 40%;
+}
+
+.currentOperation {
+    height: 60%;
+}
+
 .calcInputs {
     display: flex;
     flex-direction: column;
