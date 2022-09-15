@@ -1,7 +1,7 @@
 //getting the elements from HTML
 const numbers = document.querySelectorAll(".num");
-let fullOperation = document.querySelector(".fullOperation").textContent = "Clowning";
-let currrentOperation = document.querySelector(".currentOperation"); 
+const fullOperation = document.querySelector(".fullOperation").textContent = "Clowning";
+const currrentOperation = document.querySelector(".currentOperation"); 
 
 //setting event listeners
 for (let i = 0; i < numbers.length; i++) {
