@@ -30,14 +30,12 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
             case '8':
             case '9':
                 if(op == ""){
-                    // Working on first value
                     if(firstValue == null){
                         firstValue = button.target.textContent
                     } else{
                         firstValue += button.target.textContent
                     }
                 } else {
-                    // Working on second value
                     if(secondValue == null){
                         secondValue = button.target.textContent
                     } else {
@@ -145,7 +143,7 @@ function clearFunction() {
 }
 
 function delFunction() {
-    currentOperation.textContent = currentOperation.toString().slice(0, -1)
+    currentOperation.textContent = currentOperation.textContent.toString().slice(0, -1)
 }
 
 
