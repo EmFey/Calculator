@@ -24,7 +24,7 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
     buttonsToDisplay[i].addEventListener("click", (button) => {
         switch (button.target.textContent) {
             default:
-                currentOperation.innerText = button.target.textContent;
+                currentOperation.innerText += button.target.textContent;
                 break;
         }
     });
