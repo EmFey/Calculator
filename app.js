@@ -66,7 +66,7 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
                     if(firstValue != null && secondValue != null){
                         firstValue = operate(firstValue, op, secondValue)
                         secondValue = null
-                    } 
+                    }
                     if(op != '+'){
                         op = '+'
                     }
@@ -83,7 +83,7 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
                     }
                     if(op != '-'){
                         op = '-'
-                    }   
+                    }
                  }
                 lastValue = button.target.textContent
                 break;
@@ -94,10 +94,10 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
                     if(firstValue != null && secondValue != null){
                         firstValue = operate(firstValue, op, secondValue)
                         secondValue = null
-                    } 
+                    }
                     if(op != '/'){
                         op = '/'
-                    }  
+                    }
                  }
                 lastValue = button.target.textContent
                 break;
@@ -108,7 +108,7 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
                     if(firstValue != null && secondValue != null){
                         firstValue = operate(op, firstValue, secondValue)
                         secondValue = null
-                    }   
+                    }
                     if(op != '*'){
                         op = '*'
                     }
@@ -133,7 +133,7 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
     });
 }
 
-//Edit buttons funcions
+//Edit buttons functions
 function clearFunction() {
     op = ""
     firstValue = null
@@ -145,7 +145,6 @@ function clearFunction() {
 function delFunction() {
     currentOperation.textContent = currentOperation.textContent.toString().slice(0, -1)
 }
-
 
 //logic
 function sum(a, b) {
@@ -166,8 +165,7 @@ function divide(a, b) {
     } else {
         finalResult.textContent = a / b;
         return console.log(a / b);
-    } 
-        
+    }
 }
 
 function operate(num1, op, num2) {
