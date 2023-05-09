@@ -121,13 +121,18 @@ function operate(num1, op, num2) {
 }
 
 function displayValue() {
-    if (secondValue === null) {
-        currentOperation.textContent = firstValue;
-    } else {
-        currentOperation.textContent = secondValue;
+    let operation = "";
+    if (firstValue !== null) {
+      operation += firstValue;
     }
-}
-
+    if (op !== "") {
+      operation += " " + op + " ";
+    }
+    if (secondValue !== null) {
+      operation += secondValue;
+    }
+    currentOperation.textContent = operation;
+  }
 
 //Edit buttons functions
 function clearFunction() {
