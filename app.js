@@ -11,7 +11,6 @@ let firstValue = null;
 let secondValue = null;
 
 //setting event listeners
-
 clearBtn.addEventListener("click", clearFunction)
 delBtn.addEventListener("click", delFunction)
 

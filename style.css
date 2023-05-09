@@ -111,3 +111,7 @@ body {
 .btn:active {
     background-color: #fcaa8c;
 }
+
+p {
+    color: white;
+}
