@@ -15,9 +15,11 @@ clearBtn.addEventListener("click", clearFunction)
 delBtn.addEventListener("click", delFunction)
 
 const buttonsToDisplay = document.querySelectorAll(".btn")
-for (let i = 0; i < buttonsToDisplay.length; i++) {
-    buttonsToDisplay[i].addEventListener("click", (button) => {
-        switch(button.target.textContent){
+for (const button of buttonsToDisplay) {
+    button.addEventListener("click", (event) => {
+        const buttonValue = event.target.textContent;
+
+        switch (buttonValue) {
             case '0':
             case '1':
             case '2':
@@ -28,109 +30,104 @@ for (let i = 0; i < buttonsToDisplay.length; i++) {
             case '7':
             case '8':
             case '9':
-                if(op == ""){
-                    if(firstValue == null){
-                        firstValue = button.target.textContent
-                    } else{
-                        firstValue += button.target.textContent
-                    }
-                } else {
-                    if(secondValue == null){
-                        secondValue = button.target.textContent
-                    } else {
-                        secondValue += button.target.textContent
-                    }
-                }
-                lastValue = button.target.textContent
+                handleNumberButtonClick(buttonValue);
                 break;
             case '.':
-                if(secondValue == null){
-                    if(firstValue.includes('.')){
-                        //Already has a dot
-                    } else {
-                        firstValue += '.'
-                    }
-                } else {
-                    if(secondValue.includes('.')){
-                        //Already has a dot
-                    } else {
-                        secondValue += '.'
-                    }
-                }
+                handleDecimalButtonClick();
                 break;
             case '+':
-                if(op == ""){
-                    op = '+'
-                } else {
-                    if(firstValue != null && secondValue != null){
-                        firstValue = operate(firstValue, op, secondValue)
-                        secondValue = null
-                    }
-                    if(op != '+'){
-                        op = '+'
-                    }
-                 }
-                lastValue = button.target.textContent
-                break;
             case '-':
-                if(op == ""){
-                    op = '-'
-                } else {
-                    if(firstValue != null && secondValue != null){
-                        firstValue = operate(firstValue, op, secondValue)
-                        secondValue = null
-                    }
-                    if(op != '-'){
-                        op = '-'
-                    }
-                 }
-                lastValue = button.target.textContent
-                break;
-            case '/':
-                if(op == ""){
-                    op = '/'
-                } else {
-                    if(firstValue != null && secondValue != null){
-                        firstValue = operate(firstValue, op, secondValue)
-                        secondValue = null
-                    }
-                    if(op != '/'){
-                        op = '/'
-                    }
-                 }
-                lastValue = button.target.textContent
-                break;
             case '*':
-                if(op == ""){
-                    op = '*'
-                } else {
-                    if(firstValue != null && secondValue != null){
-                        firstValue = operate(op, firstValue, secondValue)
-                        secondValue = null
-                    }
-                    if(op != '*'){
-                        op = '*'
-                    }
-                 }
-                lastValue = button.target.textContent
+            case '/':
+                handleOperatorButtonClick(buttonValue);
                 break;
             case '=':
-                if(firstValue != null && secondValue != null && op != null){
-                    currentOperation.textContent = operate(Number(firstValue), op, Number(secondValue))
-                    op = ""
-                    firstValue = null
-                    secondValue = null
-                }
-                lastValue = button.target.textContent
+                handleEqualsButtonClick();
                 break;
         }
-        if(secondValue == null){
-            currentOperation.textContent = firstValue
-        } else {
-            currentOperation.textContent = secondValue
-        }
+
+        displayValue();
     });
 }
+
+function handleNumberButtonClick(number) {
+    if (op === "") {
+        if (firstValue === null) {
+            firstValue = number;
+        } else {
+            firstValue += number;
+        }
+    } else {
+        if (secondValue === null) {
+            secondValue = number;
+        } else {
+            secondValue += number;
+        }
+    }
+
+    lastValue = number;
+}
+
+function handleDecimalButtonClick() {
+    if (secondValue === null) {
+        if (!firstValue.includes('.')) {
+            firstValue += '.';
+        }
+    } else {
+        if (!secondValue.includes('.')) {
+            secondValue += '.';
+        }
+    }
+}
+
+function handleOperatorButtonClick(operatorClicked) {
+    if (op === "") {
+        op = operatorClicked;
+    } else {
+        if (firstValue !== null && secondValue !== null) {
+            firstValue = operate(parseFloat(firstValue), op, parseFloat(secondValue));
+            secondValue = null;
+        }
+        operator = operatorClicked;
+    }
+
+    lastValue = operatorClicked;
+}
+
+function handleEqualsButtonClick() {
+    if (firstValue !== null && secondValue !== null && op !== null) {
+        currentOperation.textContent = operate(parseFloat(firstValue), op, parseFloat(secondValue));
+        op = "";
+        firstValue = null;
+        secondValue = null;
+    }
+
+    lastValue = "=";
+}
+
+function operate(num1, op, num2) {
+    switch (op) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num1 / num2;
+        default:
+            return null;
+    }
+}
+
+function displayValue() {
+    if (secondValue === null) {
+        currentOperation.textContent = firstValue;
+    } else {
+        currentOperation.textContent = secondValue;
+    }
+}
+
 
 //Edit buttons functions
 function clearFunction() {
