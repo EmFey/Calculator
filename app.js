@@ -132,7 +132,7 @@ function displayValue() {
       operation += secondValue;
     }
     currentOperation.textContent = operation;
-  }
+}
 
 //Edit buttons functions
 function clearFunction() {
@@ -144,7 +144,24 @@ function clearFunction() {
 }
 
 function delFunction() {
-    currentOperation.textContent = currentOperation.textContent.toString().slice(0, -1)
+    let currentVal = currentOperation.textContent;
+
+    if (currentVal === "0" || currentVal.length === 1) {
+        currentOperation.textContent = "0";
+        firstValue = null;
+        secondValue = null;
+        return;
+    }
+
+    currentVal = currentVal.slice(0, -1);
+
+    if (op === "") {
+        firstValue = currentVal;
+    } else {
+        secondValue = currentVal;
+    }
+
+    currentOperation.textContent = currentVal;
 }
 
 //logic
